@@ -12,7 +12,7 @@ export default class Reply extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick() {
-        let {data} = this.props;
+        let { data } = this.props;
         let time = '' + new Date().getHours() + ':' + new Date().getMinutes();
         let { name, content } = this.state;
         let avatar = require('images/1.png');
@@ -20,7 +20,8 @@ export default class Reply extends Component {
             data.subComment = [];
         }
         data.subComment.push({ time, name, content, avatar });
-        this.props.handleReplyClick();
+        
+        this.props.handleReplyClick();//收起回复框
     }
     render() {
         return (
