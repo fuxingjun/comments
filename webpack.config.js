@@ -5,9 +5,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: path.join(__dirname, '/src/app.js'),
     output: {
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, 'dist/assets'),
         filename: "bundle.js",
-        publicPath: ""
+        publicPath: "assets/"
     },
     devServer: {
         contentBase: path.resolve(__dirname, "dist"),
@@ -78,7 +78,7 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'index.html',
+            filename: '../index.html',
             template: './src/index.html'
         }),
         new webpack.ProvidePlugin({
