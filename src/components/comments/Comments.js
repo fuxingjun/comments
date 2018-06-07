@@ -5,7 +5,7 @@ export default class Comments extends Component {
     render() {
         let data = this.props.data;
         let arr = data.map((value, index) => {
-            return <Comment key={index} {...value}/>;
+            return <Comment key={index} {...value} data = {value}/>;
         });
         return <div className="ui comments threaded">
             {arr}

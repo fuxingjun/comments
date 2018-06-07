@@ -14,7 +14,7 @@ export default class Comment extends Component {
         this.context.replyClick(comp);//修改CommentBox的state，设置有回复框的组件
     }
     render() {
-        let { date, time, name, content, avatar, subComment } = this.props;
+        let { date, time, name, content, avatar, subComment, data } = this.props;
         return <div className="comment">
             <a className="avatar">
                 <img src={avatar} />
@@ -29,7 +29,9 @@ export default class Comment extends Component {
                     <a className="reply" onClick={this.handleReplyClick}>回复</a>
                 </div>
             </div>
-            {this.context.replyComp === this ? <Reply /> : ''}
+            {this.context.replyComp === this ? 
+                <Reply data={data} handleReplyClick = {this.handleReplyClick}/> : 
+            ''}
             {subComment ? <Comments data={subComment} /> : null}
         </div>
     }
@@ -37,7 +39,7 @@ export default class Comment extends Component {
 
 Comment.propTypes = {
     time: PropTypes.string.isRequired,
-    name: PropTypes.oneOf(['Matt', 'Jenny', 'Sal', 'Elliot', 'Molly', 'Mike', 'Hurley', 'Ben', 'Jane']),
+    name: PropTypes.string,
     content: PropTypes.string.isRequired
 };
 Comment.contextTypes = {

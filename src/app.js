@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 require('../semantic/dist/semantic.css');
 
 import CommentBox from 'commentBox/CommentBox.js';
-
 let data = [
     { date: '今天', time: '11:20', name: 'Matt', content: '你好', avatar: require("images/matthew.png") },
     {
